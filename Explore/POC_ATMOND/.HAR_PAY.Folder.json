@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "95m9migxAlUlIE6pTwoy6S",
+      "objectName": "HAR_PAY",
+      "objectType": "Folder",
+      "path": "/Explore/POC_ATMOND",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "This folder holds the jobs related to HAR_PAY Detail report",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

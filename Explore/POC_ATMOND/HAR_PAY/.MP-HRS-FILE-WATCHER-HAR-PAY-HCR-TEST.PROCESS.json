@@ -1,0 +1,53 @@
+[
+   {
+      "objectGuid": "8pzLZNSuJ2nd9rs9zQghgb",
+      "objectName": "MP-HRS-FILE-WATCHER-HAR-PAY-HCR-TEST",
+      "objectType": "PROCESS",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This process will call mapping task based on some trigger file arrival",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "4ZnM5jjdcGdbFOIFN4ubuC"
+         ],
+         "repoInfo": {
+            "repoHandle": "KYsGuDoWn2sqeEr-gt-1884702-2019-06-12T09:55:23.581Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "4ZnM5jjdcGdbFOIFN4ubuC",
+      "objectName": "mt_REST_ADV_TF_CALL_HAR_PAY_HCR",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This mapping task will invoke taskflow POC_ATMOND/HAR_PAY/tf_UVN_HAR_PAY_DETAILS_HCR",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z0000000002AO"
+         }
+      }
+   }
+]

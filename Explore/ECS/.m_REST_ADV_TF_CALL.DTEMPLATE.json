@@ -1,0 +1,154 @@
+[
+   {
+      "objectGuid": "8PcnagHy9ULfk16EtURjkD",
+      "objectName": "m_REST_ADV_TF_CALL",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/ECS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "bWknm8ond2mb30JYacjy2F",
+            "9NQvsX22PvNcMN36jRhZIr",
+            "7BV4aL3qaozgDtcYesDQYb",
+            "30YST6Q0w5WbGTrnWiv9gg"
+         ],
+         "repoInfo": {
+            "repoHandle": "0109VC170000000000NN"
+         }
+      }
+   },
+   {
+      "objectGuid": "bWknm8ond2mb30JYacjy2F",
+      "objectName": "LoginV3",
+      "objectType": "BSERVICE",
+      "path": "/Explore/ECS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            },
+            {
+               "name": "0109VC28000000000003",
+               "value": "bWknm8ond2mb30JYacjy2F@LoginV3"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC27000000000003"
+         }
+      }
+   },
+   {
+      "objectGuid": "9NQvsX22PvNcMN36jRhZIr",
+      "objectName": "SecureCredentials",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B00000000002Z"
+         }
+      }
+   },
+   {
+      "objectGuid": "7BV4aL3qaozgDtcYesDQYb",
+      "objectName": "LookupV3",
+      "objectType": "BSERVICE",
+      "path": "/Explore/ECS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            },
+            {
+               "name": "0109VC28000000000004",
+               "value": "7BV4aL3qaozgDtcYesDQYb@LookupV3"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC27000000000004"
+         }
+      }
+   },
+   {
+      "objectGuid": "30YST6Q0w5WbGTrnWiv9gg",
+      "objectName": "ExecuteAdvTaskflow",
+      "objectType": "BSERVICE",
+      "path": "/Explore/ECS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            },
+            {
+               "name": "0109VC28000000000005",
+               "value": "30YST6Q0w5WbGTrnWiv9gg@ExecuteAdvTaskflow"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC27000000000005"
+         }
+      }
+   }
+]

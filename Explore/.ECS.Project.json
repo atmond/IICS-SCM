@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "ai13ijvCazGiboW4B1pug7",
+      "objectName": "ECS",
+      "objectType": "Project",
+      "path": "/Explore",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Enterprise Common Services",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]
