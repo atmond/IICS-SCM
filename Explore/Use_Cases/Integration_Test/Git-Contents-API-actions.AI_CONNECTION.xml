@@ -1,0 +1,55 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>S7BwLjBeE1KoJBU-gt-5489229-2020-02-21T10:38:03.671Z::conn.xml</types1:EntryId>
+      <types1:Name>Git-Contents-API-actions</types1:Name>
+      <types1:ParentFlowIds>bdtqSLlBWlD2pHA-gt-5492876-2020-02-21T10:38:04.002Z::pd.xml,t1T4W6jKsJlv58p-gt-5492866-2020-02-21T10:38:03.931Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-02-21T10:38:04Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-02-21T10:38:10Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Git-Contents-API-actions/Git-Contents-API-actions.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Git-Contents-API-actions"
+                     label="Git-Contents-API-actions"
+                     name="Git-Contents-API-actions">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="username" value="sagarwal@informatica.com"/>
+               <attribute encrypted="false" name="password" value="InfaCloud9"/>
+               <attribute encrypted="false" name="baseURL" value="https://api.github.com"/>
+               <attribute encrypted="false" name="owner" value="sagarwal1980"/>
+               <attribute encrypted="false"
+                          name="repo"
+                          value="Informatica-Cloud-Application-Integration"/>
+               <attribute encrypted="false" name="branch" value="master"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/Git_Contents_API/Git_Contents_API_svcDef.xml"
+                               guid="7yItmadrn4tcwZP6aIbg6G"
+                               name="Git_Contents_API"
+                               supportsConnectionTest="false"
+                               uuid="516eedb8-1d47-46a1-bbaa-8a74613884e3">
+               <description>This service connectors provides actions for Git Contents API. Refer https://developer.github.com/v3/repos/contents/</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>kPKs7uKqCw9j6QimC5lIA4</types1:GUID>
+      <types1:DisplayName>Git-Contents-API-actions</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-03-31T15:47:11.984Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

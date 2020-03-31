@@ -1,0 +1,45 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>AY7tu2SHCwkNmum-gt-11172211-2020-02-21T10:38:01.543Z::conn.xml</types1:EntryId>
+      <types1:Name>IICS-REST-API-actions</types1:Name>
+      <types1:ParentFlowIds>bdtqSLlBWlD2pHA-gt-5492876-2020-02-21T10:38:04.002Z::pd.xml,t1T4W6jKsJlv58p-gt-5492866-2020-02-21T10:38:03.931Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-02-21T10:38:02Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-02-21T10:39:23Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/IICS-REST-API-actions/IICS-REST-API-actions.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="IICS-REST-API-actions"
+                     label="IICS-REST-API-actions"
+                     name="IICS-REST-API-actions">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/IICS_REST_API/IICS_REST_API_svcDef.xml"
+                               name="IICS_REST_API"
+                               supportsConnectionTest="false"
+                               uuid="d7548bc0-06f3-49dd-a1d3-19f011e362d4">
+               <description>This service defines actions to connect to IICS through REST API</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>4LpKYcywIKfiDVV002rWQR</types1:GUID>
+      <types1:DisplayName>IICS-REST-API-actions</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-03-31T15:47:11.859Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
