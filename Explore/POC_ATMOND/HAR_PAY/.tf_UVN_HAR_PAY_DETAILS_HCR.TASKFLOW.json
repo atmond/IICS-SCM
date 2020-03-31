@@ -1,0 +1,193 @@
+[
+   {
+      "objectGuid": "9hKfvblUwoRbMUdjNSFl87",
+      "objectName": "tf_UVN_HAR_PAY_DETAILS_HCR",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "0QC8blvgcnYeOuJKl2zdWf",
+            "kHn7RDffNenjzqW3e931Ix",
+            "0hcMGd99Qoac6I2PPrehaj",
+            "6hjvLLpFxcCiPkHNVEK5Uj",
+            "1MFiROZ63ZqhS9FReSFdwe",
+            "9t8md0tyJonhr2e3YZ1Vma"
+         ],
+         "repoInfo": {
+            "repoHandle": "49Em2kVNKSmvD4t-gt-5697135-2019-06-05T11:36:14.894Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "0QC8blvgcnYeOuJKl2zdWf",
+      "objectName": "mt_RECON_PROCESS_OUTPUT_DETL_HCR",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This task will extract recon data from EDI_ABC_DETL_LOG table in EIS server based on WorkflowRunID which is nothing but Batch Id and generates Recon_Har_Paydetails_Detl.csv file as output",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z00000000028P"
+         }
+      }
+   },
+   {
+      "objectGuid": "kHn7RDffNenjzqW3e931Ix",
+      "objectName": "mt_RECON_PROCESS_EXTRACT_COUNTS_HCR_PRE",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This task will load one recon entry in EDI_ABC_MSTR_LOG table in EIS server where recon status would be In-Progress.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z00000000026T"
+         }
+      }
+   },
+   {
+      "objectGuid": "0hcMGd99Qoac6I2PPrehaj",
+      "objectName": "mt_RECON_PROCESS_EXTRACT_COUNTS_HCR_POST",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This task will complete previously inserted recon record in EDI_ABC_MSTR_LOG table with proper source, target count and recon status.\r\nIt also makes an entry to EDI_ABC_DETL_LOG table in EIS server with Metric Description, Source Value, target Value and proper Recon Status.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z00000000028F"
+         }
+      }
+   },
+   {
+      "objectGuid": "6hjvLLpFxcCiPkHNVEK5Uj",
+      "objectName": "mt_cmd_HC_Payroll_FileFormatting",
+      "objectType": "DSS",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This synchronization task is being created for sending email notification to user for the start of HAR PAY integration and also it format the incoming Payroll files as per the requirement",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0I00000000002D"
+         }
+      }
+   },
+   {
+      "objectGuid": "1MFiROZ63ZqhS9FReSFdwe",
+      "objectName": "mt_UVN_HAR_PAY_DETAILS_PAYROLL_FILES",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This task will use the formatted Payroll files as source obtained from first task and load the data in necessary tables as per logic. It also identify if the incoming records are already loaded or not and based on that it will create Reject file in .txt format and finally send the email notification to user with reject file details in tabular format",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z0000000001YJ"
+         }
+      }
+   },
+   {
+      "objectGuid": "9t8md0tyJonhr2e3YZ1Vma",
+      "objectName": "mt_FILE_NAME_PROCESSING_HCR",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This task will extract data from source file HCR_File_Name.txt",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z0000000001Y5"
+         }
+      }
+   }
+]

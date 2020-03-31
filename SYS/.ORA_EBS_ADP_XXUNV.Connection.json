@@ -1,0 +1,58 @@
+[
+   {
+      "objectGuid": "fOH443enHeUb81SQAeUiGE",
+      "objectName": "ORA_EBS_ADP_XXUNV",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "HRS Oracle EBS Connectivity",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "5cmGOvg3aOOcKvEBDZv2ow"
+         ],
+         "repoInfo": {
+            "repoHandle": "0109VC0B000000000083"
+         }
+      }
+   },
+   {
+      "objectGuid": "5cmGOvg3aOOcKvEBDZv2ow",
+      "objectName": "GDI01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC25000000000004"
+         }
+      }
+   }
+]

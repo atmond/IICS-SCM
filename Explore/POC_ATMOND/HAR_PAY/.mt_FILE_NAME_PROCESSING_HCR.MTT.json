@@ -1,0 +1,142 @@
+[
+   {
+      "objectGuid": "9t8md0tyJonhr2e3YZ1Vma",
+      "objectName": "mt_FILE_NAME_PROCESSING_HCR",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "This task will extract data from source file HCR_File_Name.txt",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "0PIUNF3VavJg1dO7gJUxqU",
+            "7ZBEDoIKmwlhyxxBoKfisH",
+            "5cmGOvg3aOOcKvEBDZv2ow",
+            "6VLGAmwbNRjeKEA6zebu43"
+         ],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z0000000001Y5"
+         }
+      }
+   },
+   {
+      "objectGuid": "0PIUNF3VavJg1dO7gJUxqU",
+      "objectName": "FF_CHR_HRS_SrcFiles",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "FF_CHR_HRS_SrcFiles",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B00000000005Q"
+         }
+      }
+   },
+   {
+      "objectGuid": "7ZBEDoIKmwlhyxxBoKfisH",
+      "objectName": "m_FILE_NAME_PROCESSING_HCR",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC1700000000021L"
+         }
+      }
+   },
+   {
+      "objectGuid": "5cmGOvg3aOOcKvEBDZv2ow",
+      "objectName": "GDI01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC25000000000004"
+         }
+      }
+   },
+   {
+      "objectGuid": "6VLGAmwbNRjeKEA6zebu43",
+      "objectName": "FF_CHR_HRS_TgtFiles",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B00000000005D"
+         }
+      }
+   }
+]
