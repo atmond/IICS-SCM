@@ -1,0 +1,142 @@
+[
+   {
+      "objectGuid": "0mFBAlbcQEed1Sv284T5Is",
+      "objectName": "mt_RECON_PROCESS_OUTPUT_DETL_ADJ",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "This task will extract recon data from EDI_ABC_DETL_LOG table in EIS server based on WorkflowRunID which is nothing but Batch Id and generates Recon_Har_Paydetails_Detl.csv file as output",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "3qqUzsZRJw1j1QqGl9mucS",
+            "58dr94GAC4hj0nnRRdPUkK",
+            "5cmGOvg3aOOcKvEBDZv2ow",
+            "6VLGAmwbNRjeKEA6zebu43"
+         ],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z0000000002O1"
+         }
+      }
+   },
+   {
+      "objectGuid": "3qqUzsZRJw1j1QqGl9mucS",
+      "objectName": "MSS_IICS_EIS",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B00000000002W"
+         }
+      }
+   },
+   {
+      "objectGuid": "58dr94GAC4hj0nnRRdPUkK",
+      "objectName": "m_RECON_PROCESS_OUTPUT_DETL_ADJ",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC170000000002PO"
+         }
+      }
+   },
+   {
+      "objectGuid": "5cmGOvg3aOOcKvEBDZv2ow",
+      "objectName": "GDI01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC25000000000004"
+         }
+      }
+   },
+   {
+      "objectGuid": "6VLGAmwbNRjeKEA6zebu43",
+      "objectName": "FF_CHR_HRS_TgtFiles",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B00000000005D"
+         }
+      }
+   }
+]

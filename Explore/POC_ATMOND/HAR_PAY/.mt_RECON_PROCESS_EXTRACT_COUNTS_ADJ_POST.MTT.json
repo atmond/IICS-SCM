@@ -1,0 +1,170 @@
+[
+   {
+      "objectGuid": "5anuUkLV312fLI3YZdrOkv",
+      "objectName": "mt_RECON_PROCESS_EXTRACT_COUNTS_ADJ_POST",
+      "objectType": "MTT",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "This task will complete previously inserted recon record in EDI_ABC_MSTR_LOG table with proper source, target count and recon status.\r\nIt also makes an entry to EDI_ABC_DETL_LOG table in EIS server with Metric Description, Source Value, target Value and proper Recon Status.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "8Jp5oGfry3LblLpdmoK6Ck",
+            "8SZPZ9ebtIUf0nc1VnH50e",
+            "3qqUzsZRJw1j1QqGl9mucS",
+            "5cmGOvg3aOOcKvEBDZv2ow",
+            "6VLGAmwbNRjeKEA6zebu43"
+         ],
+         "repoInfo": {
+            "repoHandle": "0109VC0Z0000000002O3"
+         }
+      }
+   },
+   {
+      "objectGuid": "8Jp5oGfry3LblLpdmoK6Ck",
+      "objectName": "m_RECON_PROCESS_EXTRACT_COUNTS_ADJ",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/POC_ATMOND/HAR_PAY",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC170000000002PN"
+         }
+      }
+   },
+   {
+      "objectGuid": "8SZPZ9ebtIUf0nc1VnH50e",
+      "objectName": "ORA_EBS_ADP",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "HRS Oracle EBS Connectivity",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B000000000050"
+         }
+      }
+   },
+   {
+      "objectGuid": "3qqUzsZRJw1j1QqGl9mucS",
+      "objectName": "MSS_IICS_EIS",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B00000000002W"
+         }
+      }
+   },
+   {
+      "objectGuid": "5cmGOvg3aOOcKvEBDZv2ow",
+      "objectName": "GDI01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC25000000000004"
+         }
+      }
+   },
+   {
+      "objectGuid": "6VLGAmwbNRjeKEA6zebu43",
+      "objectName": "FF_CHR_HRS_TgtFiles",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B00000000005D"
+         }
+      }
+   }
+]
