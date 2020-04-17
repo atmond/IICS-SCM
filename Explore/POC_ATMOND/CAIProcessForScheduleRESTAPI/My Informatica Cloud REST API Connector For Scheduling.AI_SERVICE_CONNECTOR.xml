@@ -1,0 +1,610 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pzsvE3C7snSDg8S-gt-3534654-2020-04-13T16:33:10.25Z::svc.xml</types1:EntryId>
+      <types1:Name>My_Informatica_Cloud_REST_API_Connector_For_Scheduling</types1:Name>
+      <types1:ParentFlowIds>StGUkdypKwKBqRi-gt-7406314-2020-04-13T17:03:40.716Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>IICS Cloud REST API For Scheduling</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-04-13T16:33:10Z</types1:CreationDate>
+      <types1:ModifiedBy>amondal@univision.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-14T09:17:05Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-14T09:17:12Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/My_Informatica_Cloud_REST_API_Connector_For_Scheduling/My_Informatica_Cloud_REST_API_Connector_For_Scheduling_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="My Informatica Cloud REST API Connector For Scheduling"
+                            label=""
+                            name="My_Informatica_Cloud_REST_API_Connector_For_Scheduling"
+                            uuid="9b6cc551-1b36-45fb-bfaa-e780449baef3">
+            <description>IICS Cloud REST API For Scheduling</description>
+            <tags/>
+            <icon>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAAtHfA5KfhxGbBNJdxBJex9McjVFUilIYS9QbSdQcyFReTdVcERMUUVPWkdRWVtkbF1ob2NkZWBkaWxsbGRtdWlucXN0dHp6eg9MgBJNgRdRgxpThRtViCBXiSNaiipchSlejCJekTVfgSxhjy1ikS5rnD9rjjJlkzZolTNsmzlqljtsmD1tmTxwnTp1oz56qklvjkJukUBwmkJwnEVymURynEZ0nUl2nlx0h0B3oUB7qkl2oEp4oU15oU9+pUt/qFB7o1J9pFR+pmx4gmp8i0qBrUaBsUqEs06JuFWAplKCq1mCqFuEqF2FqlOJtFOMuVSQvmuDk32Rn2CHq2GIq2GJrWKMq2SKrmWMrm2LoWmOsGWQtWOUvW2Rs3KPpnuVrHCVtXKYtnWYsneYtXObuXOdvnefvXuas32hvleTwVqWw16YxWKaxGOdyWiexnSewGehzmigymiizmukzW6jym6mz2ql0Wym0W6o03Ohw3GjyHWmy3anzHmqz32qzHWp0HWs1Xip0Hyw14OWpYKivYamvoyjtoCjwYKryoyrxI+uyoGw1IWx0oa22omy0Y2y0Iy00I221Yi22Yq53I673ZWxx5+zxZ+6zpa715S+3p++1qGzw6a4x66/zbi/x5fA35zB2p/C3JnC4JzD4afB1arC1qnF2q7I267K37LG17vN3aDG4qrJ4ajL5a7L4K7O5rPN4bTQ5bLR6LTS6LXV6r3R4rjU6b3W6r7Y67/Z7Lzf9r/k/NDV2sPU4sLX6MbZ5sDY6sLb7MXa6cbc7cnX4svY48nc6cnf787d6szf7tPb4tPe6Nre48Hk/Mbm+8Xm/Mbo/Mrl983i8c3k9Mrn/Mno/M3q/NTh7Nvk69Di8NLk8dXm8tLo+NDr/dHs/dXt/Nrn8Nzp89ju/dzt+drw/d3w/efp7OLt9ejv9OXw9+Hy/eP0/uTz/eX0/e3y9+ny+On1/ez3/u74/vT19vH2+fP4+/H5/vX6/vb8//j6+/j6/Pn8/v7+/gAAAAAAAFyfwikAAAEAdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wBT9wclAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGHRFWHRTb2Z0d2FyZQBwYWludC5uZXQgNC4wLjVlhTJlAAAFfElEQVRYR+2XeXQTVRTGawFxwwVRIERrlWgpAipIUUSPoGgrAm4Vlyq4o1BB1ARXUFFRUEHcd9FWrWhxqahQEbCgtWFQyTRWk7FjptVpRieDJIF5p373zaRLkko5HM7xD76/2py5v/nuve/el2Q076IydjG+eQ+gebfW4N3Fczxu9533LXr7vzrVYRcWuOcu/WRd3S8bPnv/Qfe9z3fI6ACwwP16HWtRY/nc25/tAJEe4FnSSNGmGYPiJv5aMfeO9IR0gGWej3l4VFcVWZIVLQrE1qXuh9Mh0gE8G+xwOSj6fIIgSloMn6yZfWMaQhqA24rXFCkYEBHvXSmISgQm6mZfn0pIBcwpt96vyLIEwGYAVnp93ESd59oUQgrgzSW2f+T/6+OTxo0aduWXXq9XCKogfO5+KJmQAvBQ/WOGpgLw4xXjR+cd7/oUAK8gacjixVt3BHjjLcuAFlYVZf1l404fmpP9oUDyyQZjf3suTyIkO/D8yQ3ougbA6otH5w10ZZVygCBSEh/ctgPAM9wAAWCh6nwy4HzHZ0mKwIL7wvaEJAcL1wEQjxqGrsHC+utGwMDJy3EaSIGmOGNPXNohYPEDM2fO+gcGYlEjwi3UVb76ysvPlXwh2gpFGSufnh6wsHjW08u+/rmeMohFiQALv9eurqyoWPNDIBDgCAll/K64dzuClcILxXNWbE0Mnw3gSSghWZKCCcm6yRqLD0sF3DP9o9bZpRFEESiJ+ino47ABP0kkUCQCTDskBXB3MTlvMUAAqwr1UyYBkLOWAyDu4JaDkwGLpvHht2VyBxah9qrCglGDcipkWyEAam/umQy44CtqPQ0sl2nGExYIcNqgnEqUIhQChGZy+dheSYC77rd2hxxGlznAtmDAwfgxeYNcAFhS0cYnT0zuQn4tzq6uBEXBK+EBxNsWDMOPYRo+0FWJbnCFo2z7xPz8CUVTW01kNBfh6EWUAMbeKwiSYQN4HQE4c/jA/pVqU1OTCmG3xerra9eWzp947jU2I2PGUzCgBnn8Jp9PlCNxyKqjn3cx+xtNC4c5IGLg41jMNLdXFI19hCMyJlQw05A3YesIG32iGAhKCiE4wY8uDs3JAsASQdSwphsxrIaXzrmaA8Z+y0xNpLUlULyEWsMqACD4J1EXs6p0Eh3MEM4TrWmdmlY68iICnPAbiysCj/eJQRwWRVV1WKUbwV9YMKIFgB0fkoKi6BMDsqpH0bL5pxJgiJ9FZcFKgPzj/fAI/0D4LxlDC6XKiEToYNJgYNFjOUkgmOyvkadQCqtZTKadR+8n/2F6vyU/baT+R1QbmA3sGKwYIogbBVHWDJRhxnEAFJZwAPwHJClkv5/8Q9U5ecMHZDurLRwmnAhY9RuFgGZQFXIBuOkGZiqbhM0UT/7JPu8CAY50ZrkA4C1BWy0CZeFTCVCRezi+YAwxmUaVQfkUpB+Jos22qp1OZz8nASwRQeUEUaX7svLYQwHILWPRkIgC4KjSSaEe24AaxDsc3ar56SQhjbBKvQjyC7fE1ROAyecxpstBnj/i6TJPCACHw9G3psVSLFGIEN2V7NHsXvQdyVXG4ppC5wf50/tbAXi/IzOzJjHnJt/4mhpSNP7c4H37EGBy7h8YRw3xlH+beFbD4/eyAdawx3BraTp/ruzoA61vaScVbCO0nX8bQsOq16BVDW2htHKt15ij9sNy4ls5+wy6DkhtH2VsS0MN1LCl/afMfuoxZw86ynwmjxqMrbKTKnF2p91kX23HOKf4dwqwbWq/7nw5Ju7Gs/d35M17r+r7zqlsnqtLD2s3tl6uZx2wd9dufTujzK5d9jkosZvb3859evfqlPq0XarttvzO/7PnF8vu/cXSuY7s6cL/oQv/AlP5L28OXiJ6AAAAAElFTkSuQmCC</icon>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category="Authentication"
+                       failOnError="true"
+                       forSearch="false"
+                       label="Login"
+                       maxRedirects="100"
+                       name="Login"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Login to  IICS </description>
+                  <input>
+                     <parameter label="Type:"
+                                name="@type"
+                                required="true"
+                                testWith="login"
+                                type="string"/>
+                     <parameter label="User Name:"
+                                name="username"
+                                required="true"
+                                testWith="test"
+                                type="string"/>
+                     <parameter label="Password:"
+                                name="password"
+                                required="true"
+                                testWith="test"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://dm-us.informaticacloud.com/ma/api/v2/user/login"
+                                        verb="POST">
+                        <authentication>
+                           <username>test</username>
+                           <password>test</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <body generateUsing="JSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="ICS Session ID"
+                            property="icSessionId"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category="Authentication"
+                       failOnError="true"
+                       forSearch="false"
+                       label="Logout"
+                       maxRedirects="100"
+                       name="Logout"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Log out of IICS.</description>
+                  <input>
+                     <parameter label="ICS Session ID"
+                                name="icSessionId"
+                                required="true"
+                                testWith="buSxLjRUAQ0jqMWhmnqqWL"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://dm-us.informaticacloud.com/saas/public/core/v3/logout"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="INFA-SESSION-ID">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body generateUsing="JSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category="Monitor"
+                       failOnError="true"
+                       forSearch="false"
+                       label="Get Schedules"
+                       maxRedirects="100"
+                       name="Get Schedules"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="ICS Session ID"
+                                name="icSessionId"
+                                required="true"
+                                testWith="8M46sEClewjh4QYJEBZrGu"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/saas/api/v2/schedule"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="icSessionId">{$icSessionId}</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Schedules"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">schedule</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Agent">
+                  <description>Describes an agent.</description>
+                  <detail>
+                     <field name="Id" type="string"/>
+                     <field name="Name" type="string"/>
+                     <field name="AgentHost" type="string"/>
+                     <field name="Platform" type="string"/>
+                     <field name="OrgId" type="string"/>
+                     <field name="LastUpgradeCheck" type="datetime"/>
+                     <field name="UpgradeStatus" type="string"/>
+                     <field name="LastUpgraded" type="datetime"/>
+                     <field name="IsActive" type="boolean"/>
+                     <field name="Version" type="string"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="UpdatedBy" type="string"/>
+                     <field name="CreateTime" type="datetime"/>
+                     <field name="UpdateTime" type="datetime"/>
+                     <field name="LastStatusChange" type="datetime"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Task">
+                  <description>Description of a data synchronization task.</description>
+                  <detail>
+                     <field name="Id" type="string"/>
+                     <field name="OrgId" type="int"/>
+                     <field name="CreateTime" type="string"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="UpdateTime" type="string"/>
+                     <field name="Description" type="string"/>
+                     <field name="Name" type="string"/>
+                     <field name="Type" type="string"/>
+                     <field name="UpdatedBy" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Mapping">
+                  <description>Describes a mapping in the organization.</description>
+                  <detail>
+                     <field name="HasParameters" type="boolean"/>
+                     <field name="Valid" type="boolean"/>
+                     <field name="CreateTime" type="datetime"/>
+                     <field name="DeployTime" type="datetime"/>
+                     <field name="UpdateTime" type="datetime"/>
+                     <field name="FixedConnection" type="boolean"/>
+                     <field name="DeployedMappingPreviewFileRecordId" type="string"/>
+                     <field name="Tasks" type="int"/>
+                     <field name="HasParametersDeployed" type="boolean"/>
+                     <field name="Type" type="string"/>
+                     <field name="UpdatedBy" type="string"/>
+                     <field name="BundleVersion" type="int"/>
+                     <field name="TestTaskId" type="string"/>
+                     <field name="DeployedTemplateId" type="string"/>
+                     <field name="FixedConnectionDeployed" type="string"/>
+                     <field name="Id" type="string"/>
+                     <field name="OrgId" type="string"/>
+                     <field name="TemplateId" type="string"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="Description" type="string"/>
+                     <field name="Name" type="string"/>
+                     <field name="MappingPreviewFileRecordId" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Reference">
+                  <description>Describes a Mapping Reference.</description>
+                  <detail>
+                     <field name="Type" type="string"/>
+                     <field name="RefObjectId" type="string"/>
+                     <field name="RefType" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ParameterDef">
+                  <description>Describes a mapping task parameter definition.</description>
+                  <detail>
+                     <field name="Id" type="int"/>
+                     <field name="RuntimeAttrs" type="string"/>
+                     <field name="NewObject" type="string"/>
+                     <field name="ShowBusinessNames" type="boolean"/>
+                     <field name="NewFlatFile" type="boolean"/>
+                     <field name="IsRESTModernSource" type="boolean"/>
+                     <field name="Description" type="string"/>
+                     <field name="Name" type="string"/>
+                     <field name="NaturalOrder" type="boolean"/>
+                     <field name="Label" type="string"/>
+                     <field name="TgtFieldRefs" type="string"/>
+                     <field name="Type" type="string"/>
+                     <field name="TruncateTarget" type="boolean"/>
+                     <field name="LookupConnectionId" type="string"/>
+                     <field name="TargetConnectionId" type="string"/>
+                     <field name="ExtendedObject" type="reference">
+                        <options>
+                           <option name="referenceTo">ExtendedObject</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="SourceConnectionId" type="string"/>
+                     <field name="CustomFunctionConfig" type="reference">
+                        <options>
+                           <option name="referenceTo">CustomFunctionConfig</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ExtendedObject">
+                  <description>Describes a Mapping Extended Object.</description>
+                  <detail>
+                     <field name="SortFields" type="string"/>
+                     <field name="Type" type="string"/>
+                     <field name="Filters" type="string"/>
+                     <field name="Object" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="MappingDetail">
+                  <description>Descripes a full mapping object including parameters and references.</description>
+                  <detail>
+                     <field name="MappingAbstract" type="reference">
+                        <options>
+                           <option name="referenceTo">Mapping</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="References" type="objectlist">
+                        <options>
+                           <option name="referenceTo">Reference</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="Parameters" type="objectlist">
+                        <options>
+                           <option name="referenceTo">ParameterDef</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Organization">
+                  <description>Describes an ICS organization.</description>
+                  <detail>
+                     <field name="CreateTime" type="datetime"/>
+                     <field name="MaxLogRows" type="int"/>
+                     <field name="IpAddressRanges" type="string"/>
+                     <field name="SuccessEmails" type="string"/>
+                     <field name="JobExecUserProfile" type="string"/>
+                     <field name="State" type="string"/>
+                     <field name="Address1" type="string"/>
+                     <field name="SubOrgs" type="string"/>
+                     <field name="Type" type="string"/>
+                     <field name="ErrorEmails" type="string"/>
+                     <field name="City" type="string"/>
+                     <field name="UpdatedBy" type="string"/>
+                     <field name="Id" type="string"/>
+                     <field name="OrgId" type="string"/>
+                     <field name="TwoFactorAuthentication" type="boolean"/>
+                     <field name="Timezone" type="string"/>
+                     <field name="Name" type="string"/>
+                     <field name="PasswordReuseInDays" type="int"/>
+                     <field name="MinPasswordCharMix" type="int"/>
+                     <field name="SpiUrl" type="url"/>
+                     <field name="RestApiSessionLimit" type="int"/>
+                     <field name="CampaignCode" type="string"/>
+                     <field name="UpdateTime" type="datetime"/>
+                     <field name="WarningEmails" type="string"/>
+                     <field name="Zipcode" type="string"/>
+                     <field name="ParentOrgId" type="string"/>
+                     <field name="Country" type="string"/>
+                     <field name="PasswordExpirationInDays" type="int"/>
+                     <field name="MinPasswordLength" type="int"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="DevOrg" type="boolean"/>
+                     <field name="SubOrgLimit" type="int"/>
+                     <field name="Employees" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="MappingConfigTask">
+                  <description>Describes a Mapping Configuration Task</description>
+                  <detail>
+                     <field name="MappingId" type="double"/>
+                     <field name="CreateTime" type="string"/>
+                     <field name="UpdateTime" type="string"/>
+                     <field name="AgentId" type="double"/>
+                     <field name="SessionProperties" type="string"/>
+                     <field name="RuntimeEnvironmentId" type="double"/>
+                     <field name="Type" type="string"/>
+                     <field name="LastRunTime" type="double"/>
+                     <field name="UpdatedBy" type="string"/>
+                     <field name="OrgId" type="string"/>
+                     <field name="Id" type="string"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="ShortDescription" type="string"/>
+                     <field name="Description" type="string"/>
+                     <field name="Name" type="string"/>
+                     <field name="Parameters" type="objectlist">
+                        <options>
+                           <option name="referenceTo">Parameter</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="CustomFunctionConfig">
+                  <description>Defines attribute that defines configuration for mapplets used in the task.</description>
+                  <detail>
+                     <field name="Id" type="string"/>
+                     <field name="OutputFields" type="string"/>
+                     <field name="InputMap" type="reference"/>
+                     <field name="Connections" type="reference"/>
+                     <field name="Type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="CreateMappingTaskRequest">
+                  <description>An object describing a request to create a mapping configuration task.</description>
+                  <detail>
+                     <field name="parameter" type="objectlist">
+                        <options>
+                           <option name="referenceTo">Parameter</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="name" type="string"/>
+                     <field name="agentId" type="string"/>
+                     <field name="mappingId" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Parameter">
+                  <description>Describes a mapping config task parameter.</description>
+                  <detail>
+                     <field name="name" type="string"/>
+                     <field name="type" type="picklist">
+                        <options>
+                           <option name="values">[{"value":"STRING","label":"STRING"},{"value":"LOOKUP","label":"LOOKUP"},{"value":"TARGET","label":"TARGET"},{"value":"EXTENDED_SOURCE","label":"EXTENDED_SOURCE"}]</option>
+                        </options>
+                     </field>
+                     <field name="text" type="string"/>
+                     <field name="lookupObject" type="string"/>
+                     <field name="targetObject" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="TaskFlow">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="Id" type="string"/>
+                     <field name="OrgId" type="string"/>
+                     <field name="CreateTime" type="datetime"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="UpdateTime" type="datetime"/>
+                     <field name="Description" type="string"/>
+                     <field name="Name" type="string"/>
+                     <field name="Tasks" type="objectlist">
+                        <options>
+                           <option name="referenceTo">FlowTask</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="Type" type="string"/>
+                     <field name="UpdatedBy" type="string"/>
+                     <field name="SuccessTaskEmail" type="reference">
+                        <options>
+                           <option name="referenceTo">TaskEmail</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="WarningTaskEmail" type="reference">
+                        <options>
+                           <option name="referenceTo">TaskEmail</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="ErrorTaskEmail" type="reference">
+                        <options>
+                           <option name="referenceTo">TaskEmail</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="ScheduleId" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="FlowTask">
+                  <description>Describes a Task in a TaskFlow.</description>
+                  <detail>
+                     <field name="TaskId" type="string"/>
+                     <field name="StopOnError" type="boolean"/>
+                     <field name="Name" type="string"/>
+                     <field name="StopOnWarning" type="boolean"/>
+                     <field name="Type" type="picklist">
+                        <options>
+                           <option name="values">[{"value":"[{\n\tlabel: \"AVS\"","label":"[{\n\tlabel: \"AVS\""},{"value":"value: \"Contact validation task\"\n}","label":"value: \"Contact validation task\"\n}"},{"value":"{\n\tlabel: \"DMASK\"","label":"{\n\tlabel: \"DMASK\""},{"value":"value: \"Data masking task\"\n}","label":"value: \"Data masking task\"\n}"},{"value":"{\n\tlabel: \"DQA\"","label":"{\n\tlabel: \"DQA\""},{"value":"value: \"Data assessment task\"\n}","label":"value: \"Data assessment task\"\n}"},{"value":"{\n\tlabel: \"DRS\"","label":"{\n\tlabel: \"DRS\""},{"value":"value: \"Data replication task\"\n}","label":"value: \"Data replication task\"\n}"},{"value":"{\n\tlabel: \"DSS\"","label":"{\n\tlabel: \"DSS\""},{"value":"value: \"Data synchronization task\"\n}","label":"value: \"Data synchronization task\"\n}"},{"value":"{\n\tlabel: \"MTT\"","label":"{\n\tlabel: \"MTT\""},{"value":"value: \"Mapping configuration task\"\n}","label":"value: \"Mapping configuration task\"\n}"},{"value":"{\n\tlabel: \"PCS\"","label":"{\n\tlabel: \"PCS\""},{"value":"value: \"PowerCenter task\"\n}]","label":"value: \"PowerCenter task\"\n}]"}]</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="TaskEmail">
+                  <description>Describes an email address.</description>
+                  <detail>
+                     <field name="Id" type="string"/>
+                     <field name="Emails" type="string"/>
+                     <field name="Type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Entries">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="id" type="int"/>
+                     <field name="startTime" type="datetime"/>
+                     <field name="failedTargetRows" type="int"/>
+                     <field name="failedSourceRows" type="int"/>
+                     <field name="objectName" type="string"/>
+                     <field name="state" type="int"/>
+                     <field name="entries" type="string"/>
+                     <field name="runtimeEnvironmentId" type="string"/>
+                     <field name="errorMsg" type="string"/>
+                     <field name="runId" type="int"/>
+                     <field name="type" type="string"/>
+                     <field name="endTime" type="datetime"/>
+                     <field name="successSourceRows" type="int"/>
+                     <field name="successTargetRows" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ActivityLogEntry">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="id" type="string"/>
+                     <field name="startTime" type="datetime"/>
+                     <field name="failedTargetRows" type="int"/>
+                     <field name="failedSourceRows" type="int"/>
+                     <field name="objectName" type="string"/>
+                     <field name="objectId" type="string"/>
+                     <field name="state" type="int"/>
+                     <field name="entries" type="reference">
+                        <options>
+                           <option name="referenceTo">entries</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="errorMsg" type="string"/>
+                     <field name="runId" type="int"/>
+                     <field name="type" type="string"/>
+                     <field name="endTime" type="datetime"/>
+                     <field name="successSourceRows" type="int"/>
+                     <field name="successTargetRows" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ActivityLogResults">
+                  <description>Contains the results of the activity log</description>
+                  <detail>
+                     <field name="totalCount" type="string"/>
+                     <field name="successCount" type="string"/>
+                     <field name="errorCount" type="string"/>
+                     <field name="incompleteCount" type="string"/>
+                     <field name="activityLogEntry" type="objectlist">
+                        <options>
+                           <option name="referenceTo">ActivityLogEntry</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="roles">
+                  <description>Roles returned by the Registration API</description>
+                  <detail>
+                     <field name="description" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="result">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="xml" type="string"/>
+                     <field name="text" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="root">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="schedule" type="objectlist">
+                        <options>
+                           <option name="referenceTo">schedule</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="schedule">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="id" type="string"/>
+                     <field name="orgId" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="description" type="string"/>
+                     <field name="createTime" type="string"/>
+                     <field name="updateTime" type="string"/>
+                     <field name="createdBy" type="string"/>
+                     <field name="updatedBy" type="string"/>
+                     <field name="startTime" type="string"/>
+                     <field name="startTimeUTC" type="string"/>
+                     <field name="interval" type="string"/>
+                     <field name="frequency" type="int"/>
+                     <field name="mon" type="string"/>
+                     <field name="tue" type="string"/>
+                     <field name="wed" type="string"/>
+                     <field name="thu" type="string"/>
+                     <field name="fri" type="string"/>
+                     <field name="sat" type="string"/>
+                     <field name="sun" type="string"/>
+                     <field name="weekDay" type="string"/>
+                     <field name="dayOfMonth" type="int"/>
+                     <field name="timeZoneId" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>aKuV119osuJjkt31N3hcWY</types1:GUID>
+      <types1:DisplayName>My Informatica Cloud REST API Connector For Scheduling</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-04-17T11:08:28.85Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

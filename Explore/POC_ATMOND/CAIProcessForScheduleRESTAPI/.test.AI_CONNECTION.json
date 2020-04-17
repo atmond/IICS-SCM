@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "52dJvmaRMOaeBCfeDYH4mf",
+      "objectName": "test",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/POC_ATMOND/CAIProcessForScheduleRESTAPI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "aKuV119osuJjkt31N3hcWY"
+         ],
+         "repoInfo": {
+            "repoHandle": "StGUkdypKwKBqRi-gt-7406314-2020-04-13T17:03:40.716Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "aKuV119osuJjkt31N3hcWY",
+      "objectName": "My Informatica Cloud REST API Connector For Scheduling",
+      "objectType": "AI_SERVICE_CONNECTOR",
+      "path": "/Explore/POC_ATMOND/CAIProcessForScheduleRESTAPI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IICS Cloud REST API For Scheduling",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "pzsvE3C7snSDg8S-gt-3534654-2020-04-13T16:33:10.25Z::svc.xml"
+         }
+      }
+   }
+]
