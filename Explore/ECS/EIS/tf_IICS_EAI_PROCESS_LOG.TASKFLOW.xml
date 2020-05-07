@@ -1,0 +1,559 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rtRuImXycotFgpK-gt-7381361-2019-05-04T04:38:28.288Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_IICS_EAI_PROCESS_LOG</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>Taskflow to orchestrate the Data back-up from Application Integration PostgreDB to Teradata (Tables backed up - AEPROCESS, AEPROCESSLOGDATA).</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>meswaran@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2019-05-04T04:38:28Z</types1:CreationDate>
+      <types1:ModifiedBy>mbathini@univision.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-06T17:49:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mbathini@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-06T23:00:18Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_IICS_EAI_PROCESS_LOG/tf_IICS_EAI_PROCESS_LOG.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_IICS_EAI_PROCESS_LOG"
+                   name="tf_IICS_EAI_PROCESS_LOG">
+            <appliesTo/>
+            <description>Taskflow to orchestrate the Data back-up from Application Integration PostgreDB to Teradata (Tables backed up - AEPROCESS, AEPROCESSLOGDATA).</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="mt_IICS_EAI_GET_MAX_PID_SA01" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-IICS-EAI-GET-MAX-PID</option>
+                  </options>
+               </field>
+               <field description="" name="mt_IICS_SA01_EAI_AEPROCESS" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-IICS-SA01-EAI-AEPROCESS</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mt_IICS_SA01_EAI_AEPROCESSLOGDATA"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-IICS-SA01-EAI-AEPROCESSLOGDATA</option>
+                  </options>
+               </field>
+               <field description="" name="mt_IICS_EAI_GET_MAX_PID_SA02" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-IICS-EAI-GET-MAX-PID</option>
+                  </options>
+               </field>
+               <field description="" name="mt_IICS_SA02_EAI_AEPROCESS" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-IICS-SA02-EAI-AEPROCESS</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mt_IICS_SA02_EAI_AEPROCESSLOGDATA"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-IICS-SA02-EAI-AEPROCESSLOGDATA</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jv9lk8yq" targetId="jv90klx3"/>
+               </start>
+               <assignment id="jv90klx3">
+                  <title>asgn_SRCDBINSTANCE_01</title>
+                  <operation source="formula"
+                             to="temp.mt_IICS_EAI_GET_MAX_PID_SA01[1]/inout[1]/srcdbinstance">
+                     <expression language="XQuery">'PSA01'</expression>
+                  </operation>
+                  <link id="jv90klx5" targetId="jv90klu7"/>
+               </assignment>
+               <assignment id="jv9lk90x">
+                  <title>asgn_PID_01&amp;BATCH_ID</title>
+                  <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS[1]/inout[1]/PID_01">temp.mt_IICS_EAI_GET_MAX_PID_SA01[1]/inout[1]/PID_01</operation>
+                  <operation source="field"
+                             to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA[1]/inout[1]/PID_01">temp.mt_IICS_EAI_GET_MAX_PID_SA01[1]/inout[1]/PID_01</operation>
+                  <operation source="formula"
+                             to="temp.mt_IICS_SA01_EAI_AEPROCESS[1]/inout[1]/BATCH_ID">
+                     <expression language="XQuery">util:getProcessId()</expression>
+                  </operation>
+                  <operation source="formula"
+                             to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA[1]/inout[1]/BATCH_ID">
+                     <expression language="XQuery">util:getProcessId()</expression>
+                  </operation>
+                  <link id="jv9lk916" targetId="jv9lk8om"/>
+               </assignment>
+               <assignment id="jv9lk8yu">
+                  <title>asgn_SRCDBINSTANCE_02</title>
+                  <operation source="formula"
+                             to="temp.mt_IICS_EAI_GET_MAX_PID_SA02[1]/inout[1]/srcdbinstance">
+                     <expression language="XQuery">'PSA02'</expression>
+                  </operation>
+                  <link id="jv9lk8yw" targetId="jv9lk8ws"/>
+               </assignment>
+               <assignment id="jv9lk917">
+                  <title>asgn_PID_02&amp;BATCH_ID</title>
+                  <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS[1]/inout[1]/PID_02">temp.mt_IICS_EAI_GET_MAX_PID_SA02[1]/inout[1]/PID_02</operation>
+                  <operation source="field"
+                             to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA[1]/inout[1]/PID_02">temp.mt_IICS_EAI_GET_MAX_PID_SA02[1]/inout[1]/PID_02</operation>
+                  <operation source="formula"
+                             to="temp.mt_IICS_SA02_EAI_AEPROCESS[1]/inout[1]/BATCH_ID">
+                     <expression language="XQuery">util:getProcessId()</expression>
+                  </operation>
+                  <operation source="formula"
+                             to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA[1]/inout[1]/BATCH_ID">
+                     <expression language="XQuery">util:getProcessId()</expression>
+                  </operation>
+                  <link id="jv9lk92n" targetId="jv9lk92m"/>
+               </assignment>
+               <eventContainer id="jv90klu7">
+                  <service id="jv90kltn">
+                     <title>mt_IICS_EAI_GET_MAX_PID_SA01</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_IICS_EAI_GET_MAX_PID</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">7DFnj69jD4Eduh0y1l0mQx</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-IICS-EAI-GET-MAX-PID">temp.mt_IICS_EAI_GET_MAX_PID_SA01</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/inout/PID_01">PID_01</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/inout/srcdbinstance">srcdbinstance</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/inout/dflt_srcdb01">dflt_srcdb01</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/inout/dflt_srcdb02">dflt_srcdb02</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA01/inout/PID_02">PID_02</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="jv9lk90y" targetId="jv9lk90x"/>
+                  <events>
+                     <catch faultField="temp.mt_IICS_EAI_GET_MAX_PID_SA01/fault"
+                            id="jv90klu5"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mt_IICS_EAI_GET_MAX_PID_SA01/fault"
+                            id="jv90klu6"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="jv9lk8ws">
+                  <service id="jv9lk8vh">
+                     <title>mt_IICS_EAI_GET_MAX_PID_SA02</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_IICS_EAI_GET_MAX_PID</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">7DFnj69jD4Eduh0y1l0mQx</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-IICS-EAI-GET-MAX-PID">temp.mt_IICS_EAI_GET_MAX_PID_SA02</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/inout/PID_01">PID_01</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/inout/srcdbinstance">srcdbinstance</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/inout/dflt_srcdb01">dflt_srcdb01</operation>
+                        <operation source="field"
+                                   to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/inout/dflt_srcdb02">dflt_srcdb02</operation>
+                        <operation source="field" to="temp.mt_IICS_EAI_GET_MAX_PID_SA02/inout/PID_02">PID_02</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="jv9lk918" targetId="jv9lk917"/>
+                  <events>
+                     <catch faultField="temp.mt_IICS_EAI_GET_MAX_PID_SA02/fault"
+                            id="jv9lk8wq"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mt_IICS_EAI_GET_MAX_PID_SA02/fault"
+                            id="jv9lk8wr"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="jv9lk8om" type="parallel">
+                  <title>PP1</title>
+                  <flow id="jv9lk8oq">
+                     <eventContainer id="jv9lk8oy">
+                        <service id="jv9lk8oz">
+                           <title>mt_IICS_SA01_EAI_AEPROCESS</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_IICS_SA01_EAI_AEPROCESS</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7XAOnqzMVy8jwnnGpbth2b</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-IICS-SA01-EAI-AEPROCESS">temp.mt_IICS_SA01_EAI_AEPROCESS</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESS/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/inout/PID_01">PID_01</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESS/inout/BATCH_ID">BATCH_ID</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mt_IICS_SA01_EAI_AEPROCESS/fault"
+                                  id="jv90klvm"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mt_IICS_SA01_EAI_AEPROCESS/fault"
+                                  id="jv90klvn"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="jv9lk8or" targetId="jv9lk8om" type="containerLink"/>
+                  </flow>
+                  <flow id="jv9lk8ot">
+                     <eventContainer id="jv9lk8to">
+                        <service id="jv9lk8tp">
+                           <title>mt_IICS_SA01_EAI_AEPROCESSLOGDATA</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_IICS_SA01_EAI_AEPROCESSLOGDATA</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">96HXj7nAABHhi7HG8FpH0p</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-IICS-SA01-EAI-AEPROCESSLOGDATA">temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/inout/PID_01">PID_01</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/inout/BATCH_ID">BATCH_ID</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/fault"
+                                  id="jv90klw5"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mt_IICS_SA01_EAI_AEPROCESSLOGDATA/fault"
+                                  id="jv90klw6"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="jv9lk8ou" targetId="jv9lk8om" type="containerLink"/>
+                  </flow>
+                  <link id="jv9lk8op" targetId="jv9lk8oq" type="containerLink"/>
+                  <link id="jv9lk8os" targetId="jv9lk8ot" type="containerLink"/>
+                  <link id="jv9lk8yv" targetId="jv9lk8yu"/>
+               </container>
+               <container id="jv9lk92m" type="parallel">
+                  <title>PP2</title>
+                  <flow id="jv9lk92q">
+                     <eventContainer id="jv9lk93b">
+                        <service id="jv9lk93c">
+                           <title>mt_IICS_SA02_EAI_AEPROCESS</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_IICS_SA02_EAI_AEPROCESS</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3g9Sg42t54ube2gncJNWCf</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-IICS-SA02-EAI-AEPROCESS">temp.mt_IICS_SA02_EAI_AEPROCESS</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESS/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/inout/PID_02">PID_02</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESS/inout/BATCH_ID">BATCH_ID</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mt_IICS_SA02_EAI_AEPROCESS/fault"
+                                  id="jv9lk8r8"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mt_IICS_SA02_EAI_AEPROCESS/fault"
+                                  id="jv9lk8r9"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="jv9lk92r" targetId="jv9lk92m" type="containerLink"/>
+                  </flow>
+                  <flow id="jv9lk92t">
+                     <eventContainer id="jv9lk94v">
+                        <service id="jv9lk943">
+                           <title>mt_IICS_SA02_EAI_AEPROCESSLOGDATA</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_IICS_SA02_EAI_AEPROCESSLOGDATA</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">dextNbOTwENeG8pd940reC</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-IICS-SA02-EAI-AEPROCESSLOGDATA">temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/inout/PID_02">PID_02</operation>
+                              <operation source="field"
+                                         to="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/inout/BATCH_ID">BATCH_ID</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/fault"
+                                  id="jv9lk94t"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mt_IICS_SA02_EAI_AEPROCESSLOGDATA/fault"
+                                  id="jv9lk94u"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="jv9lk92u" targetId="jv9lk92m" type="containerLink"/>
+                  </flow>
+                  <link id="jv9lk92p" targetId="jv9lk92q" type="containerLink"/>
+                  <link id="jv9lk92s" targetId="jv9lk92t" type="containerLink"/>
+                  <link id="jv9lk92z" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-IICS-EAI-GET-MAX-PID"
+                              isByCopy="true"
+                              name="mt-IICS-EAI-GET-MAX-PID">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-IICS-SA01-EAI-AEPROCESS"
+                              isByCopy="true"
+                              name="mt-IICS-SA01-EAI-AEPROCESS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-IICS-SA01-EAI-AEPROCESSLOGDATA"
+                              isByCopy="true"
+                              name="mt-IICS-SA01-EAI-AEPROCESSLOGDATA">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-IICS-SA02-EAI-AEPROCESS"
+                              isByCopy="true"
+                              name="mt-IICS-SA02-EAI-AEPROCESS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-IICS-SA02-EAI-AEPROCESSLOGDATA"
+                              isByCopy="true"
+                              name="mt-IICS-SA02-EAI-AEPROCESSLOGDATA">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4rTTMoNDdxbgirKeZ72pIM</types1:GUID>
+      <types1:DisplayName>tf_IICS_EAI_PROCESS_LOG</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-07T17:49:50.672Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

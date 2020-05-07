@@ -1,0 +1,58 @@
+[
+   {
+      "objectGuid": "1asEZE7Khn6g2QgmhzFs8H",
+      "objectName": "m_IICS_SA01_EAI_AEPROCESSLOGDATA",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/ECS/EIS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "21VmuZjy92kfyt98rUeakg"
+         ],
+         "repoInfo": {
+            "repoHandle": "0109VC1700000000020Z"
+         }
+      }
+   },
+   {
+      "objectGuid": "21VmuZjy92kfyt98rUeakg",
+      "objectName": "TDA_EIS_DM_01_TPT",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0109VC0B0000000000JD"
+         }
+      }
+   }
+]
