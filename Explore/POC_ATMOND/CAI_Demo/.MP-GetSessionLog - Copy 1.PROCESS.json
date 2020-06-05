@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "4rkxmjS1fGhbmyddRXx4EC",
+      "objectName": "MP-GetSessionLog - Copy 1",
+      "objectType": "PROCESS",
+      "path": "/Explore/POC_ATMOND/CAI_Demo",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "Process to Fetch Session Log for any MCT which ran within last 3 months and unavailable in IICS Monitor",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "cFYJ59YstODjIgiFs50BQ4"
+         ],
+         "repoInfo": {
+            "repoHandle": "PAZf5kck8jKBmeK-gt-5143407-2020-05-29T10:54:53.666Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "cFYJ59YstODjIgiFs50BQ4",
+      "objectName": "AC-REST-RESPONSE",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/POC_ATMOND/CAI_Demo",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "AppConnection created to accommodate SC-REST-RESPONSE",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "rbg0ZkL0jmu6lS0-gt-2414331-2020-05-20T13:34:02.828Z::conn.xml"
+         }
+      }
+   }
+]

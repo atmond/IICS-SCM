@@ -1,0 +1,96 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>cggaaaaa-gt-9897413-2020-05-21T10:49:13.032Z::pd.xml</types1:EntryId>
+      <types1:Name>MP_Trial</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>This Process does a GET call to IICS org using Rest API and convert the output xml to csv file</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:GAI01,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-05-21T10:49:13Z</types1:CreationDate>
+      <types1:ModifiedBy>amondal@univision.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-28T15:21:38Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-28T15:21:48Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.MP_Trial/MP_Trial.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="MP_Trial"
+                  name="MP_Trial"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>This Process does a GET call to IICS org using Rest API and convert the output xml to csv file</description>
+            <tags>.agent:GAI01,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="pattern" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">ABC,PQR,zzz</option>
+                  </options>
+               </field>
+               <field description="" name="temp1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp2" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp3" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">2</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>GAI01</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kaqhfknr" targetId="kaqhfkn1"/>
+               </start>
+               <assignment id="kaqhfkn1">
+                  <title>Assignment to temp1, temp2</title>
+                  <operation source="formula" to="temp.temp1">
+                     <expression language="XQuery">fn:tokenize($temp.pattern , ',') [4]</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp2">
+                     <expression language="XQuery">fn:tokenize($temp.pattern , ',') [$temp.temp3 ]</expression>
+                  </operation>
+                  <link id="kaqhfkn3" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>c4341252-e2db-4373-9c6a-096e0154fb64</ns1:Id>
+               <ns1:Name>input</ns1:Name>
+               <ns1:CreatedBy>amondal@univision.net</ns1:CreatedBy>
+               <ns1:CreationDate>2020-05-21T10:49:13Z</ns1:CreationDate>
+               <ns1:ModifiedBy>amondal@univision.net</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2020-05-21T10:49:13Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>9bHhJkCRktKb5aztwn3yGE</types1:GUID>
+      <types1:DisplayName>MP_Trial</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-05T11:45:41.842Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "9bHhJkCRktKb5aztwn3yGE",
+      "objectName": "MP_Trial",
+      "objectType": "PROCESS",
+      "path": "/Explore/POC_ATMOND/CAI_Demo",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process does a GET call to IICS org using Rest API and convert the output xml to csv file",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "cggaaaaa-gt-9897413-2020-05-21T10:49:13.032Z::pd.xml"
+         }
+      }
+   }
+]

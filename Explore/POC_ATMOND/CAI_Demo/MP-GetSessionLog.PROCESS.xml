@@ -1,0 +1,144 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>tieMHck5qbbfUry-gt-4575689-2020-05-28T15:53:55.318Z::pd.xml</types1:EntryId>
+      <types1:Name>MP-GetSessionLog</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process to Fetch Session Log for any MCT which ran within last 3 months and unavailable in IICS Monitor</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:GAI01,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-05-28T15:53:55Z</types1:CreationDate>
+      <types1:ModifiedBy>amondal@univision.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-06-04T12:24:48Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-06-04T12:25:02Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.MP-GetSessionLog/MP-GetSessionLog.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="MP-GetSessionLog"
+                  name="MP-GetSessionLog"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>Process to Fetch Session Log for any MCT which ran within last 3 months and unavailable in IICS Monitor</description>
+            <tags>.agent:GAI01,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="test" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="TaskID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="ShellWorkingDir" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option hide="true" name="initialvalue">/app/projects/ECS/EIS/Scripts</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>GAI01</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kafebleh" targetId="kafebleg"/>
+               </start>
+               <service id="kafebleg">
+                  <title>LoginV3</title>
+                  <serviceName>AC-REST-RESPONSE:LoginV3</serviceName>
+                  <serviceGUID>cFYJ59YstODjIgiFs50BQ4</serviceGUID>
+                  <serviceInput>
+                     <parameter name="ReqBody" source="formula">
+                        <expression language="XQuery">let $envName := util:resolveURN('urn:env:name')
+let $configuration := util:getCatalogResource('project:/common-resources/config/Configurations.xml')/*:UnivisionIICSConfiguration/*:UnivisionIICS[@Environment=$envName]
+let $UserName := $configuration/*:UserName/text()
+let $Password := $configuration/*:Password/text()
+return
+fn:substring-after(fn:serialize(&lt;login&gt;
+         &lt;username&gt; {$UserName}&lt;/username&gt;
+         &lt;password&gt; {$Password}&lt;/password&gt;
+&lt;/login&gt;),'&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;' )</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="kagplah0" targetId="kagplagz"/>
+               </service>
+               <service id="kagplagz">
+                  <title>GetTaskID</title>
+                  <serviceName>AC-REST-RESPONSE:GetTaskID</serviceName>
+                  <serviceGUID>cFYJ59YstODjIgiFs50BQ4</serviceGUID>
+                  <serviceInput>
+                     <parameter name="icSessionID" source="formula">
+                        <expression language="XQuery">$output.Login_Response//*[local-name()="icSessionId"]/text()</expression>
+                     </parameter>
+                     <parameter name="MCTName" source="formula">
+                        <expression language="XQuery">'mt_REST_TEST'</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="kaqyjj4x" targetId="kaqyjj4w"/>
+               </service>
+               <service id="kas2buy9">
+                  <title>Run a Shell Command</title>
+                  <serviceName>avShellService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="command" source="formula">
+                        <expression language="XQuery">'EIS_Fetch_SessionLog.sh 0109VC0Z0000000007IX'</expression>
+                     </parameter>
+                     <parameter name="workingDirPath" source="field" updatable="true">temp.ShellWorkingDir</parameter>
+                  </serviceInput>
+                  <link id="kasf5f5h" targetId="kasf5f5g"/>
+               </service>
+               <assignment id="kaqyjj4w">
+                  <title>Assignment to TaskID</title>
+                  <operation source="formula" to="temp.TaskID">
+                     <expression language="XQuery">list:head($output.GetTaskIDresponse//*[local-name()="id"]/text())</expression>
+                  </operation>
+                  <link id="kas2buya" targetId="kas2buy9"/>
+               </assignment>
+               <assignment id="kasf5f5g">
+                  <title>Assignment to test</title>
+                  <operation source="field" to="input.test">output.outputString</operation>
+                  <link id="kasf5f5i" targetId="kapkw3m9"/>
+               </assignment>
+               <end id="kapkw3m9">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>1cc4b3cf-75c3-4315-a451-94e28ca53d0d</ns1:Id>
+               <ns1:Name>Sample-Inputs</ns1:Name>
+               <ns1:CreatedBy>amondal@univision.net</ns1:CreatedBy>
+               <ns1:CreationDate>2020-05-28T15:53:55Z</ns1:CreationDate>
+               <ns1:ModifiedBy>amondal@univision.net</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2020-05-28T15:53:55Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "MCT": "mt_REST_TEST",
+	 "Iteration": "5"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>6GKLkEEdfY7e6G4VkXu48E</types1:GUID>
+      <types1:DisplayName>MP-GetSessionLog</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-05T11:45:42.523Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

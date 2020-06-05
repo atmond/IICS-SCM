@@ -1,0 +1,47 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rbg0ZkL0jmu6lS0-gt-2414331-2020-05-20T13:34:02.828Z::conn.xml</types1:EntryId>
+      <types1:Name>AC-REST-RESPONSE</types1:Name>
+      <types1:ParentFlowIds>PAZf5kck8jKBmeK-gt-5143407-2020-05-29T10:54:53.666Z::pd.xml,RuImXycotFgpKi9-gt-823827-2020-05-20T13:45:44.709Z::pd.xml,tieMHck5qbbfUry-gt-4575689-2020-05-28T15:53:55.318Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>AppConnection created to accommodate SC-REST-RESPONSE</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:GAI01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-05-20T13:34:03Z</types1:CreationDate>
+      <types1:ModifiedBy>amondal@univision.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-28T13:47:04Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-28T14:50:35Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AC-REST-RESPONSE/AC-REST-RESPONSE.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AC-REST-RESPONSE"
+                     label="AC-REST-RESPONSE"
+                     name="AC-REST-RESPONSE">
+            <description>AppConnection created to accommodate SC-REST-RESPONSE</description>
+            <tags>.agent:GAI01</tags>
+            <agent>GAI01</agent>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_REST_RESPONSE/SC_REST_RESPONSE_svcDef.xml"
+                               guid="haL8AGLxpKcdmA6VUrvaEX"
+                               name="SC-REST-RESPONSE"
+                               supportsConnectionTest="false"
+                               uuid="c3f18992-7e98-42da-bf4d-cf294c213741">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>cFYJ59YstODjIgiFs50BQ4</types1:GUID>
+      <types1:DisplayName>AC-REST-RESPONSE</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-05T11:45:42.202Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,225 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>RuImXycotFgpKi9-gt-823827-2020-05-20T13:45:44.709Z::pd.xml</types1:EntryId>
+      <types1:Name>MP-CreateMCTDynamically</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process to create MCT dynamically with different target table based on user inputs</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:GAI01,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-05-20T13:45:45Z</types1:CreationDate>
+      <types1:ModifiedBy>amondal@univision.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-28T15:31:56Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-28T15:32:08Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.MP-CreateMCTDynamically/MP-CreateMCTDynamically.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="MP-CreateMCTDynamically"
+                  name="MP-CreateMCTDynamically"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>Process to create MCT dynamically with different target table based on user inputs</description>
+            <tags>.agent:GAI01,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="MCT" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="SequenceID" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">1</option>
+                  </options>
+               </field>
+               <field description="" name="MCT_with_SequenceID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="targetObject" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="ResponseBody" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="TargetTablePattern" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="TargetTable" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Iteration" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">10</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>GAI01</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kafebleh" targetId="kafebleg"/>
+               </start>
+               <service id="kafebleg">
+                  <title>LoginV3</title>
+                  <serviceName>AC-REST-RESPONSE:LoginV3</serviceName>
+                  <serviceGUID>cFYJ59YstODjIgiFs50BQ4</serviceGUID>
+                  <serviceInput>
+                     <parameter name="ReqBody" source="formula">
+                        <expression language="XQuery">let $envName := util:resolveURN('urn:env:name')
+let $configuration := util:getCatalogResource('project:/common-resources/config/Configurations.xml')/*:UnivisionIICSConfiguration/*:UnivisionIICS[@Environment=$envName]
+let $UserName := $configuration/*:UserName/text()
+let $Password := $configuration/*:Password/text()
+return
+fn:substring-after(fn:serialize(&lt;login&gt;
+         &lt;username&gt; {$UserName}&lt;/username&gt;
+         &lt;password&gt; {$Password}&lt;/password&gt;
+&lt;/login&gt;),'&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;' )</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="kagplah0" targetId="kagplagz"/>
+               </service>
+               <service id="kagplagz">
+                  <title>GetTaskID</title>
+                  <serviceName>AC-REST-RESPONSE:GetTaskID</serviceName>
+                  <serviceGUID>cFYJ59YstODjIgiFs50BQ4</serviceGUID>
+                  <serviceInput>
+                     <parameter name="icSessionID" source="formula">
+                        <expression language="XQuery">$output.Login_Response//*[local-name()="icSessionId"]/text()</expression>
+                     </parameter>
+                     <parameter name="MCTName" source="formula">
+                        <expression language="XQuery">'mt_REST_TEST'</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="kagwrw7f" targetId="kagwrw7e"/>
+               </service>
+               <service id="kagwrw7e">
+                  <title>GetEntireBody</title>
+                  <serviceName>AC-REST-RESPONSE:GetEntireBody</serviceName>
+                  <serviceGUID>cFYJ59YstODjIgiFs50BQ4</serviceGUID>
+                  <serviceInput>
+                     <parameter name="icSessionID" source="formula">
+                        <expression language="XQuery">$output.Login_Response//*[local-name()="icSessionId"]/text()</expression>
+                     </parameter>
+                     <parameter name="id" source="formula">
+                        <expression language="XQuery">list:head($output.GetTaskIDresponse//*[local-name()="id"]/text())</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="kapkw3jz" targetId="kapkw3jy"/>
+               </service>
+               <container id="kapkw3jy" type="exclusive">
+                  <title>More Iteration</title>
+                  <flow id="kapkw3k2">
+                     <assignment id="kapkw3mg">
+                        <title>Assignment to MCT, MCT_with_SequenceID etc.</title>
+                        <operation source="formula" to="temp.MCT">
+                           <expression language="XQuery">list:head($output.GetTaskIDresponse//*[local-name()="name"]/text())</expression>
+                        </operation>
+                        <operation source="formula" to="temp.MCT_with_SequenceID">
+                           <expression language="XQuery">fn:concat($temp.MCT, $temp.SequenceID )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.targetObject">
+                           <expression language="XQuery">list:head($output.GetTaskIDresponse//*[local-name()="targetObject"]/text())</expression>
+                        </operation>
+                        <operation source="formula" to="temp.ResponseBody">
+                           <expression language="XQuery">fn:replace($output.GetEntireBodyresponse,$temp.MCT,$temp.MCT_with_SequenceID)</expression>
+                        </operation>
+                        <operation source="formula" to="temp.TargetTablePattern">
+                           <expression language="XQuery">'XXUNV_EMPLOYEE_STG,XXUNV_EMPLOYEE_STG_TEMP,XXUNV_EMPLOYEE_STG,XXUNV_EMPLOYEE_STG_TEMP,XXUNV_EMPLOYEE_STG,XXUNV_EMPLOYEE_STG_TEMP,XXUNV_EMPLOYEE_STG,XXUNV_EMPLOYEE_STG_TEMP,XXUNV_EMPLOYEE_STG,XXUNV_EMPLOYEE_STG_TEMP'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.TargetTable">
+                           <expression language="XQuery">fn:tokenize($temp.TargetTablePattern, ',') [$temp.SequenceID ]</expression>
+                        </operation>
+                        <link id="kapkw3ms" targetId="kapkw3mr"/>
+                     </assignment>
+                     <assignment id="kapkw3n2">
+                        <title>Assignment to SequenceID, Iteration</title>
+                        <operation source="formula" to="temp.SequenceID">
+                           <expression language="XQuery">($temp.SequenceID + 1)</expression>
+                        </operation>
+                        <operation source="formula" to="temp.Iteration">
+                           <expression language="XQuery">($temp.Iteration - 1)</expression>
+                        </operation>
+                        <link id="kapkw3nr" targetId="kapkw3np"/>
+                     </assignment>
+                     <service id="kapkw3mr">
+                        <title>CreateMCT</title>
+                        <serviceName>AC-REST-RESPONSE:CreateMCT</serviceName>
+                        <serviceGUID>cFYJ59YstODjIgiFs50BQ4</serviceGUID>
+                        <serviceInput>
+                           <parameter name="icSessionID" source="formula">
+                              <expression language="XQuery">$output.Login_Response//*[local-name()="icSessionId"]/text()</expression>
+                           </parameter>
+                           <parameter name="RESTResponse" source="formula">
+                              <expression language="XQuery">fn:replace($temp.ResponseBody,$temp.targetObject,$temp.TargetTable)</expression>
+                           </parameter>
+                        </serviceInput>
+                        <link id="kapkw3n3" targetId="kapkw3n2"/>
+                     </service>
+                     <jumpTo id="kapkw3np">
+                        <link id="kapkw3nq" targetId="kapkw3jy"/>
+                     </jumpTo>
+                  </flow>
+                  <flow id="kapkw3k5">
+                     <link id="kapkw3k6" targetId="kapkw3jy" type="containerLink"/>
+                  </flow>
+                  <link id="kapkw3k1" targetId="kapkw3k2" type="containerLink">
+                     <condition source="formula">
+                        <function name="not-equals">
+                           <arg name="left">{$temp.Iteration}</arg>
+                           <arg name="right">{0}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kapkw3k4" targetId="kapkw3k5" type="containerLink"/>
+                  <link id="kapkw3ma" targetId="kapkw3m9"/>
+               </container>
+               <end id="kapkw3m9">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>7ed2b481-59da-44ee-b29d-d9dc201cddb4</ns1:Id>
+               <ns1:Name>Sample-Inputs</ns1:Name>
+               <ns1:CreatedBy>amondal@univision.net</ns1:CreatedBy>
+               <ns1:CreationDate>2020-05-27T17:26:06Z</ns1:CreationDate>
+               <ns1:ModifiedBy>amondal@univision.net</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2020-05-27T17:26:06Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "MCT": "mt_REST_TEST",
+	 "Iteration": "5"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>iyK2DlM5LEPjGH2xiN3QGU</types1:GUID>
+      <types1:DisplayName>MP-CreateMCTDynamically</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-05T11:45:42.491Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

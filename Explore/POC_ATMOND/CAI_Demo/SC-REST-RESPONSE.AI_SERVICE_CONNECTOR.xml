@@ -1,0 +1,217 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>NsLaa-gt-6374089-2020-05-19T17:26:00.664Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-REST-RESPONSE</types1:Name>
+      <types1:ParentFlowIds>rbg0ZkL0jmu6lS0-gt-2414331-2020-05-20T13:34:02.828Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Service Connector to Accommodate various Rest actions</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amondal@univision.net</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T17:26:01Z</types1:CreationDate>
+      <types1:ModifiedBy>amondal@univision.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-28T14:49:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amondal@univision.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-28T14:50:01Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_REST_RESPONSE/SC_REST_RESPONSE_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-REST-RESPONSE"
+                            label=""
+                            name="SC-REST-RESPONSE"
+                            uuid="c3f18992-7e98-42da-bf4d-cf294c213741">
+            <description>Service Connector to Accommodate various Rest actions </description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="LoginV3"
+                       maxRedirects="100"
+                       name="LoginV3"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>This action is needed to get icSessionID which will be used in next action</description>
+                  <input>
+                     <parameter name="ReqBody"
+                                nogen="true"
+                                required="false"
+                                testWith="&lt;login&gt;&lt;username&gt;rest-api@univision.net.dev&lt;/username&gt;&lt;password&gt;Welcome123&lt;/password&gt;&lt;/login&gt;"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{util:getCatalogResource('project:/common-resources/config/Configurations.xml')/*:UnivisionIICSConfiguration/*:iicsloginurl/text()}"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/xml</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{$ReqBody}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Login_Response"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="GetTaskID"
+                       maxRedirects="100"
+                       name="GetTaskID"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>This action is needed to pull Job id for using in next set of actions</description>
+                  <input>
+                     <parameter name="icSessionID"
+                                nogen="true"
+                                required="false"
+                                testWith="3hwKj7aW5nVcUdh2zjcD4o"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </parameter>
+                     <parameter name="MCTName"
+                                nogen="true"
+                                required="false"
+                                testWith="mt_BATCHID_GENERIC_STG_MLRKPLN"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{util:getCatalogResource('project:/common-resources/config/Configurations.xml')/*:UnivisionIICSConfiguration/*:iicsapiurl/text()||'mttask/name/'}{$MCTName}"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/xml</header>
+                           <header name="icSessionID">{$icSessionID}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="GetTaskIDresponse"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="GetEntireBody"
+                       maxRedirects="100"
+                       name="GetEntireBody"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>This action is to pull ResponseBody using icSessionID and TaskID fetched from earlier actions</description>
+                  <input>
+                     <parameter name="icSessionID"
+                                nogen="true"
+                                required="false"
+                                testWith="3hwKj7aW5nVcUdh2zjcD4o"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </parameter>
+                     <parameter name="id"
+                                nogen="true"
+                                required="false"
+                                testWith="0109VC0Z00000000046S"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{util:getCatalogResource('project:/common-resources/config/Configurations.xml')/*:UnivisionIICSConfiguration/*:iicsapiurl/text()||'mttask/'}{$id}"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="icSessionID">{$icSessionID}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="GetEntireBodyresponse" type="string">
+                        <xquery>{$RESTResponse/rest:payload/text()}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="CreateMCT"
+                       maxRedirects="100"
+                       name="CreateMCT"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>This action is to create MCT dynamically with different target table based on user inputs</description>
+                  <input>
+                     <parameter name="icSessionID"
+                                nogen="true"
+                                required="false"
+                                testWith="3hwKj7aW5nVcUdh2zjcD4o"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </parameter>
+                     <parameter name="RESTResponse"
+                                nogen="true"
+                                required="false"
+                                testWith="{     &#34;@type&#34;: &#34;mtTask&#34;,     &#34;id&#34;: &#34;0109VC0Z00000000046S&#34;,     &#34;orgId&#34;: &#34;0109VC&#34;,     &#34;name&#34;: &#34;mt_BATCHID_GENERIC_STG_MLRKPLN&#34;,     &#34;description&#34;: &#34;This mapping task is to execute generic mapping m_BATCHID_GENERIC_MAPPING_MLRKPLN and make necessary Batch ID changes in parameter file for Stage Table Load&#34;,     &#34;createTime&#34;: &#34;2019-08-28T13:08:33.000Z&#34;,     &#34;updateTime&#34;: &#34;2019-08-28T13:08:33.000Z&#34;,     &#34;createdBy&#34;: &#34;amondal@univision.net&#34;,     &#34;updatedBy&#34;: &#34;amondal@univision.net&#34;,     &#34;agentId&#34;: &#34;0109VC08000000000004&#34;,     &#34;runtimeEnvironmentId&#34;: &#34;0109VC25000000000004&#34;,     &#34;preProcessingCmd&#34;: &#34;sed -i \&#34;s:`grep 'VERIFYDATE=' $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm|cut -d= -f 2`:$(date '+%m/%d/%y'):g\&#34; $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm;\r\nsed -i \&#34;s:`grep 'VERIFYDT=' $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm|cut -d= -f 2`:$(date '+%m/%d/%y'):g\&#34; $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm;\r\nsed -i \&#34;s:`grep 'ASOFDATE=' $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm|cut -d= -f 2`:$(date '+%m/%d/%y'):g\&#34; $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm;\r\nsed -i \&#34;s:`grep 'MTH=' $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm|cut -d= -f 2`:`cal -3|awk 'NR==1{print toupper(substr($1,1))\&#34;-\&#34;$2}'`:g\&#34; $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm;\r\nsed -i \&#34;s:`grep 'ASOFDT=' $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm|cut -d= -f 2`:$(date '+%m/%d/%y'):g\&#34; $PMParamDir/SAI_AUTO_MLRKPLN_DM.prm;\r\nsed -i \&#34;s:`grep 'ASOFDATE=' $PMParamDir/SAI_AUTO_STAGE_PARAM_MILLER_KAPLAN.prm|cut -d= -f 2`:$(date '+%m/%d/%y'):g\&#34; $PMParamDir/SAI_AUTO_STAGE_PARAM_MILLER_KAPLAN.prm;\r\nsed -i \&#34;s:`grep 'ASOFDT=' $PMParamDir/SAI_AUTO_STAGE_PARAM_MILLER_KAPLAN.prm|cut -d= -f 2`:$(date '+%m/%d/%y'):g\&#34; $PMParamDir/SAI_AUTO_STAGE_PARAM_MILLER_KAPLAN.prm;\r\nsed -i \&#34;s:`grep 'ASOFDATE=' $PMParamDir/SAI_AUTO_MLRKPLN_RECON.prm|cut -d= -f 2`:$(date '+%m/%d/%y'):g\&#34; $PMParamDir/SAI_AUTO_MLRKPLN_RECON.prm;\r\nsed -i \&#34;s:`grep 'MTH=' $PMParamDir/SAI_AUTO_MLRKPLN_RECON.prm|cut -d= -f 2`:`cal -3|awk 'NR==1{print toupper(substr($1,1))\&#34;-\&#34;$2}'`:g\&#34; $PMParamDir/SAI_AUTO_MLRKPLN_RECON.prm;&#34;,     &#34;postProcessingCmd&#34;: &#34;sed -i \&#34;s/`grep 'BTCH_ID=' $PMParamDir/$ParamFileName|head -1|cut -d= -f 2`/`head -1 $PMTargetFileDir/$MLRKPLN_BATCHFILE`/g\&#34; $PMParamDir/$ParamFileName;\r\nsed -i \&#34;s/`grep 'STG_BTCH_ID=' $PMParamDir/$ReconParamFileName|head -1|cut -d= -f 2`/`head -1 $PMTargetFileDir/$MLRKPLN_BATCHFILE`/g\&#34; $PMParamDir/$ReconParamFileName;&#34;,     &#34;maxLogs&#34;: 10,     &#34;verbose&#34;: false,     &#34;mappingId&#34;: &#34;0109VC170000000004PC&#34;,     &#34;shortDescription&#34;: &#34;This mapping task is to execute generic mapping m_...&#34;,     &#34;sessionProperties&#34;: {},     &#34;enableCrossSchemaPushdown&#34;: true,     &#34;parameterFileName&#34;: &#34;SAI/AUTO/SAI_AUTO_STAGE_PARAM_MILLER_KAPLAN.prm&#34;,     &#34;parameters&#34;: [         {             &#34;@type&#34;: &#34;mtTaskParameter&#34;,             &#34;id&#34;: 17242543,             &#34;name&#34;: &#34;$src_DUMMY$&#34;,             &#34;type&#34;: &#34;SOURCE&#34;,             &#34;label&#34;: &#34;src_DUMMY_CONN&#34;,             &#34;description&#34;: &#34;&#34;,             &#34;uiProperties&#34;: {                 &#34;connectionParameterized&#34;: &#34;true&#34;,                 &#34;logcnx&#34;: &#34;src_DUMMY_CONN&#34;,                 &#34;objectParameterized&#34;: &#34;false&#34;,                 &#34;visible&#34;: &#34;false&#34;             },             &#34;sourceConnectionId&#34;: &#34;0109VC0B00000000009Z&#34;,             &#34;sourceObject&#34;: &#34;DUMMY_src_DUMMY&#34;,             &#34;newFlatFile&#34;: false,             &#34;newObject&#34;: false,             &#34;showBusinessNames&#34;: true,             &#34;naturalOrder&#34;: true,             &#34;truncateTarget&#34;: false,             &#34;bulkApiDBTarget&#34;: false,             &#34;customFuncCfg&#34;: {                 &#34;@type&#34;: &#34;customFuncConfig&#34;,                 &#34;id&#34;: -1,                 &#34;connections&#34;: [],                 &#34;inputMap&#34;: [],                 &#34;outputFields&#34;: []             },             &#34;tgtFieldRefs&#34;: {},             &#34;targetUpdateColumns&#34;: [],             &#34;runtimeAttrs&#34;: {},             &#34;isRESTModernSource&#34;: true,             &#34;customQuery&#34;: &#34;SELECT CURRENT_DATE&#34;,             &#34;isFileList&#34;: false,             &#34;handleSpecialChars&#34;: false,             &#34;frsAsset&#34;: false,             &#34;fetchMode&#34;: &#34;ORIGINAL&#34;,             &#34;tgtObjectAttributes&#34;: {},             &#34;runtimeParameterData&#34;: {                 &#34;@type&#34;: &#34;mtTaskRuntimeParameterData&#34;,                 &#34;isConnectionRuntimeParameter&#34;: true,                 &#34;isObjectRuntimeParameter&#34;: false,                 &#34;connectionParameterName&#34;: &#34;src_DUMMY_CONN&#34;             },             &#34;overriddenFields&#34;: []         },         {             &#34;@type&#34;: &#34;mtTaskParameter&#34;,             &#34;id&#34;: 17242546,             &#34;name&#34;: &#34;$tgt_BATCH_ID$&#34;,             &#34;type&#34;: &#34;TARGET&#34;,             &#34;label&#34;: &#34;tgt_BATCH_ID&#34;,             &#34;uiProperties&#34;: {                 &#34;connectionParameterized&#34;: &#34;false&#34;,                 &#34;objectParameterized&#34;: &#34;false&#34;,                 &#34;visible&#34;: &#34;false&#34;,                 &#34;defaultTargetUpdateColumns&#34;: &#34;&#34;             },             &#34;targetConnectionId&#34;: &#34;0109VC0B00000000009I&#34;,             &#34;targetObject&#34;: &#34;BATCH_ID_MLRKPLN.txt&#34;,             &#34;targetObjectLabel&#34;: &#34;BATCH_ID_MLRKPLN.txt&#34;,             &#34;newFlatFile&#34;: false,             &#34;newObject&#34;: false,             &#34;showBusinessNames&#34;: false,             &#34;naturalOrder&#34;: true,             &#34;truncateTarget&#34;: false,             &#34;bulkApiDBTarget&#34;: false,             &#34;operationType&#34;: &#34;Insert&#34;,             &#34;tgtFFAttrs&#34;: {                 &#34;@type&#34;: &#34;flatFileAttrs&#34;,                 &#34;id&#34;: 3238183,                 &#34;delimiter&#34;: &#34;,&#34;,                 &#34;textQualifier&#34;: &#34;none&#34;,                 &#34;escapeChar&#34;: &#34;\&#34;&#34;,                 &#34;headerLineNo&#34;: 1             },             &#34;customFuncCfg&#34;: {                 &#34;@type&#34;: &#34;customFuncConfig&#34;,                 &#34;id&#34;: -1,                 &#34;connections&#34;: [],                 &#34;inputMap&#34;: [],                 &#34;outputFields&#34;: []             },             &#34;tgtFieldRefs&#34;: {},             &#34;targetUpdateColumns&#34;: [],             &#34;extendedObject&#34;: {                 &#34;@type&#34;: &#34;extendedObject&#34;,                 &#34;filters&#34;: [],                 &#34;sortFields&#34;: []             },             &#34;runtimeAttrs&#34;: {},             &#34;isRESTModernSource&#34;: true,             &#34;isFileList&#34;: false,             &#34;handleSpecialChars&#34;: false,             &#34;frsAsset&#34;: false,             &#34;fetchMode&#34;: &#34;ORIGINAL&#34;,             &#34;tgtObjectAttributes&#34;: {},             &#34;runtimeParameterData&#34;: {                 &#34;@type&#34;: &#34;mtTaskRuntimeParameterData&#34;,                 &#34;isConnectionRuntimeParameter&#34;: false,                 &#34;isObjectRuntimeParameter&#34;: false             },             &#34;overriddenFields&#34;: []         }     ],     &#34;sequences&#34;: [],     &#34;inOutParameters&#34;: [         {             &#34;@type&#34;: &#34;mtTaskInOutParameter&#34;,             &#34;id&#34;: &#34;-1&#34;,             &#34;name&#34;: &#34;BATCH_ID&#34;,             &#34;description&#34;: &#34;&#34;,             &#34;initialValue&#34;: &#34;&#34;,             &#34;datatype&#34;: &#34;BIGINT&#34;,             &#34;precision&#34;: &#34;19&#34;,             &#34;scale&#34;: &#34;0&#34;,             &#34;retentionPolicy&#34;: &#34;ON_SUCCESS_OR_WARNING&#34;,             &#34;aggregationType&#34;: &#34;MAX&#34;,             &#34;currentValue&#34;: &#34;351333228799700992&#34;         }     ],     &#34;connRuntimeAttrs&#34;: [] }"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{util:getCatalogResource('project:/common-resources/config/Configurations.xml')/*:UnivisionIICSConfiguration/*:iicsapiurl/text()||'mttask/'}"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="icSessionID">{$icSessionID}</header>
+                        </httpHeaders>
+                        <body>{$RESTResponse}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="CreateMCTresponse" type="string">
+                        <xquery>{$RESTResponse/rest:payload/text()}</xquery>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>haL8AGLxpKcdmA6VUrvaEX</types1:GUID>
+      <types1:DisplayName>SC-REST-RESPONSE</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-05T11:45:41.863Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

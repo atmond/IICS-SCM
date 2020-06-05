@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "iyK2DlM5LEPjGH2xiN3QGU",
+      "objectName": "MP-CreateMCTDynamically",
+      "objectType": "PROCESS",
+      "path": "/Explore/POC_ATMOND/CAI_Demo",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process to create MCT dynamically with different target table based on user inputs",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "cFYJ59YstODjIgiFs50BQ4"
+         ],
+         "repoInfo": {
+            "repoHandle": "RuImXycotFgpKi9-gt-823827-2020-05-20T13:45:44.709Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "cFYJ59YstODjIgiFs50BQ4",
+      "objectName": "AC-REST-RESPONSE",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/POC_ATMOND/CAI_Demo",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "AppConnection created to accommodate SC-REST-RESPONSE",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "rbg0ZkL0jmu6lS0-gt-2414331-2020-05-20T13:34:02.828Z::conn.xml"
+         }
+      }
+   }
+]
