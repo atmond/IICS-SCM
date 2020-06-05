@@ -140,5 +140,5 @@ fn:substring-after(fn:serialize(&lt;login&gt;
       <types1:GUID>6GKLkEEdfY7e6G4VkXu48E</types1:GUID>
       <types1:DisplayName>MP-GetSessionLog</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-06-05T12:21:37.723Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-06-05T12:43:23.396Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
